@@ -1,0 +1,43 @@
+.form__list {
+  width: 387px;
+  margin-top: 5px;
+  list-style: none;
+  width: 387px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+ 
+}
+
+.form__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+span {
+  font-size: 20px;
+}
+
+.form__list_button {
+    margin-top: 5px;
+    padding: 7px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    background: #ff0081;
+    
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    
+} 
+.form__list_button:hover {
+  background: #e9cada;
+  border: 2px solid #ff0081;
+  color: #813a5a;
+  font-weight: 600;
+  transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
