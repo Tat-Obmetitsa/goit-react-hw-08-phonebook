@@ -64,7 +64,7 @@ class RegisterView extends Component {
             />
           </label>
 
-          <button type="submit">Sign up</button>
+          <button type="submit">Sign in</button>
         </form>
       </div>
     );
