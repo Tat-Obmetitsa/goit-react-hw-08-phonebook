@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import { authOperations } from '../redux/auth';
+import { connect } from 'react-redux';
+import { authOperations } from '../../redux/auth';
 
 class LoginView extends Component {
   state = {
@@ -57,8 +57,8 @@ class LoginView extends Component {
   }
 }
 
-// const mapDispatchToProps = {
-//   onLogin: authOperations.logIn,
-// };
+const mapDispatchToProps = {
+  onLogin: authOperations.logIn,
+};
 
-export default LoginView;
+export default connect(null, mapDispatchToProps)(LoginView);

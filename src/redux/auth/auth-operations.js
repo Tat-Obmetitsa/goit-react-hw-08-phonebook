@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authActions from './auth-actions';
 
-axios.defaults.baseURL = 'https://lpj-tasker.herokuapp.com';
+axios.defaults.baseURL = 'https://goit-phonebook-api.herokuapp.com/';
 
 const token = {
   set(token) {
@@ -18,6 +18,7 @@ const token = {
  *
  * После успешной регистрации добавляем токен в HTTP-заголовок
  */
+
 const register = credentials => async dispatch => {
   dispatch(authActions.registerRequest());
 
