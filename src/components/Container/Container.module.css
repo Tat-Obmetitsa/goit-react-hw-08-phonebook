@@ -21,4 +21,9 @@ body {
     padding: 15px;
     max-width: 1024px;
   }
-  
+.loading {
+  font-family: 'Dancing Script', cursive;
+    font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+}

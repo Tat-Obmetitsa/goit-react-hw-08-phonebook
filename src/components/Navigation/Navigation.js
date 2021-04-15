@@ -12,6 +12,8 @@ const s  = {
   },
   link: {
     display: 'flex',
+    fontFamily: 'Dancing Script, cursive',
+    fontSize: 25,
     flexDirection: 'row',
     textDecoration: 'none',
     padding: 12,
@@ -24,6 +26,7 @@ const s  = {
 };
 const Navigation = ({isAuthenticated}) => (
   <nav style={s.nav}>
+    
     <NavLink to={routes.home} exact
           style={s.link}
           activeStyle={s.activeLink} >

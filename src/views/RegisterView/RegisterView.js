@@ -52,6 +52,7 @@ class RegisterView extends Component {
             <input
               type="email"
               name="email"
+              pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
               value={email}
               onChange={this.handleChange}
               className={s.form__input}

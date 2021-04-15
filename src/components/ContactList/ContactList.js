@@ -16,8 +16,8 @@ class ContactList extends Component {
         <ul className={s.form__list}>
           {contactList.map(({ id, name, number }) => (
             <li key={id} className={s.form__item}>
-              <span>{name}: </span>
-              <span>{number}</span>
+              <span className={s.text}>{name}: </span>
+              <span className={s.text}>{number}</span>
               <button
                 type="button"
                 className={s.form__list_button}

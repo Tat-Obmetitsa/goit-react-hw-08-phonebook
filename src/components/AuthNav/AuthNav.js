@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import {routes} from '../../routes'
-// import s from './AuthNav.module.css'
+import {routes} from '../../routes';
+
 const s = {
   link: {
+    fontFamily: 'Dancing Script, cursive',
+    fontSize: 25,
     display: 'inline-block',
     textDecoration: 'none',
     padding: 12,
@@ -11,7 +13,7 @@ const s = {
     color: '#2A363B',
   },
   activeLink: {
-    color: '#E84A5F',
+    color: '#E84A5F'
   },
 };
 
