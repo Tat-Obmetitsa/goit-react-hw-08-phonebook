@@ -2,13 +2,15 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {routes} from '../../routes';
-import {authSelectors} from '../../redux/auth'
-// import s from './Navigation.module.css';
+import {authSelectors} from '../../redux/auth';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 
 const s  = {
   nav: {
     display: 'flex',
+    alignItems: 'center',
     flexDirection: 'row',
+    textAlighn: 'center'
   },
   link: {
     display: 'flex',
@@ -23,6 +25,10 @@ const s  = {
   activeLink: {
     color: '#E84A5F',
   },
+  svg: {
+    width: 40,
+    height: 40
+  }
 };
 const Navigation = ({isAuthenticated}) => (
   <nav style={s.nav}>
@@ -30,7 +36,7 @@ const Navigation = ({isAuthenticated}) => (
     <NavLink to={routes.home} exact
           style={s.link}
           activeStyle={s.activeLink} >
-      Home
+            <HomeOutlinedIcon style={s.svg} />
     </NavLink>
     {isAuthenticated && <NavLink
       to={routes.contacts}

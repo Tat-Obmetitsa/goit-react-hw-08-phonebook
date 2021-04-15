@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { authSelectors, authOperations } from '../../redux/auth';
 import defaultAvatar from './default-avatar.png';
+import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 
 const s = {
   container: {
@@ -20,15 +21,12 @@ const s = {
     marginRight: 12,
     marginLeft: 12
   },
-  button: {
-    display: 'inline-block',
-    alignItems: 'center',
-    textAlign: 'center',
-    background: '#ff0081',
-    border: 'none',
-    borderRadius: 20,
-    color: '#fff',
-    outline: 'none',
+  svg: {
+    width: 30,
+    height: 30,
+    display: 'block',
+    background: 'transparent',
+    color: '#E84A5F',
     cursor: 'pointer'
   }
 }
@@ -40,9 +38,7 @@ const UserMenu = ({ avatar, name, onLogout }) => (
     alt="default avatar" 
     width="32" />
     <span style={s.name}>Welcome, {name}</span>
-    <button type="button" onClick={onLogout} style={s.button}>
-      Logout
-    </button>
+    <ExitToAppOutlinedIcon onClick={onLogout} style={s.svg} />
   </div>
 );
 const mapStateToProps = state => ({
