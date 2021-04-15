@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Lora);
 body {
     background-color: #fff;
     color: #813a5a;
@@ -10,3 +11,17 @@ body {
     margin: 0;
     padding: 0;
   }
+  a {
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    transition: .5s linear;
+  }
+  .div {
+    margin: 0 auto;
+    width: 1000px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

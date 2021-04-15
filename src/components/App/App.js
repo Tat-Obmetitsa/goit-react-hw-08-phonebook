@@ -1,36 +1,56 @@
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { Component, Suspense, lazy  } from 'react';
+import { Switch } from 'react-router-dom';
 
 import Container from '../Container';
-import ContactsView from '../../views/ContactsView/ContactsView.js';
-// import HomeView from '../../views/HomeView/HomeView.js';
-import LoginView from '../../views/LoginView/LoginView.js';
-import RegisterView from '../../views/RegisterView/RegisterView.js';
 import AppBar from '../AppBar/AppBar';
 import {routes} from '../../routes';
 import { authOperations } from '../../redux/auth';
 import { connect } from 'react-redux';
+import PrivateRoute from '../PrivateRoute';
+import PublicRoute from '../PrivateRoute';
 
+const HomeView = lazy(() => import('../../views/HomeView/HomeView.js'));
+const RegisterView = lazy(() => import('../../views/RegisterView/RegisterView.js'));
+const LoginView = lazy(() => import('../../views/LoginView/LoginView.js'));
+const ContactsView = lazy(() => import('../../views/ContactsView/ContactsView.js'));
 
 class App extends Component {
   componentDidMount() {
-    this.props.onGetCurretnUser();
+    this.props.onGetCurrentUser();
   }
 
   render() {
     return (
       <Container>
-        <AppBar />
+      <AppBar />
+
+      <Suspense fallback={<p>Loading...</p>}>
         <Switch>
-          {/* <Route exact path={routes.home} component={HomeView} /> */}
-          <Route path={routes.register} component={RegisterView} />
-          <Route path={routes.login} component={LoginView} />
-          <Route path={routes.contacts} component={ContactsView} />
+          <PublicRoute exact path="/" component={HomeView} />
+          <PublicRoute
+            path={routes.register}
+            restricted
+            redirectTo={routes.contacts}
+            component={RegisterView}
+          />
+          <PublicRoute
+            path={routes.login}
+            restricted
+            redirectTo={routes.contacts}
+            component={LoginView}
+          />
+          <PrivateRoute
+            path={routes.contacts}
+            redirectTo={routes.login}
+            component={ContactsView}
+          />
         </Switch>
-      </Container>
+      </Suspense>
+    </Container>
     );
   }
 }
+
 
 const mapDispatchToProps = {
   onGetCurretnUser: authOperations.getCurrentUser,

@@ -5,11 +5,11 @@ import defaultAvatar from './default-avatar.png';
 
 const styles = {
   container: {
-    display: 'flex',
     alignItems: 'center',
   },
   avatar: {
     marginRight: 4,
+    borderRadius: 50,
   },
   name: {
     fontWeight: 700,

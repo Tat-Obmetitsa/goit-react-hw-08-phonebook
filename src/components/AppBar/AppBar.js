@@ -6,9 +6,17 @@ import AuthNav from '../AuthNav';
 import { authSelectors } from '../../redux/auth';
 // import { ReactComponent } from '*.svg';
 
-
+const styles = {
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottom: '1px solid #2A363B',
+  },
+};
 const AppBar = ({ isAuthenticated }) => (
-  <header>
+  <header  style={styles.header}>
     <Navigation />
     {isAuthenticated ? <UserMenu /> : <AuthNav />}
   </header>
