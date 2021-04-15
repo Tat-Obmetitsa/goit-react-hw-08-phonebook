@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { authOperations } from '../../redux/auth';
+import s from './RegisterView.module.css';
 
 
 
@@ -27,44 +28,48 @@ class RegisterView extends Component {
     const { name, email, password } = this.state;
 
     return (
-      <div>
-        <h1>Registration</h1>
+      <div >
+        <h1 className={s.form__title}>Registration</h1>
 
         <form
           onSubmit={this.handleSubmit}
           autoComplete="off"
+          className={s.form}
         >
-          <label>
+          <label className={s.form__label}>
             Name
             <input
               type="text"
               name="name"
               value={name}
               onChange={this.handleChange}
+              className={s.form__input}
             />
           </label>
 
-          <label >
+          <label className={s.form__label} >
             Email
             <input
               type="email"
               name="email"
               value={email}
               onChange={this.handleChange}
+              className={s.form__input}
             />
           </label>
 
-          <label>
+          <label className={s.form__label}>
             Password
             <input
               type="password"
               name="password"
               value={password}
               onChange={this.handleChange}
+              className={s.form__input}
             />
           </label>
 
-          <button type="submit">Sign in</button>
+          <button type="submit" className={s.form__button}>Sign in</button>
         </form>
       </div>
     );

@@ -13,6 +13,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     borderBottom: '1px solid #2A363B',
+    width: 'inherit'
   },
 };
 const AppBar = ({ isAuthenticated }) => (

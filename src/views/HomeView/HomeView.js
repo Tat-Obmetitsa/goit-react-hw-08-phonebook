@@ -1,28 +1,12 @@
 import React from 'react';
-
-const styles = {
-  container: {
-    minHeight: 'calc(100vh - 50px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontWeight: 500,
-    fontSize: 48,
-    textAlign: 'center',
-  },
-};
+import s from './HomeView.module.css'
 
 const HomeView = () => (
-  <div style={styles.container}>
-    <h1 style={styles.title}>
-    The Phone Book 
-    is now a multi-
-    platform proposition.{' '}
+  <div className={s.container}>
+    <h1 className={s.title}>
+    The Phone Book <br /> is now a multi-<br /> platform proposition.{' '}
     </h1>
-    <p> You don't need to pick up the printed version to use it. 
-    We're online.</p>
+    <p className={s.text}> You don't need to pick up the printed version to use it.<br /> We're online.</p>
   </div>
 );
 
